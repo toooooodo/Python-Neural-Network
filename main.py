@@ -1,17 +1,15 @@
 from dnn import DNN
 import numpy as np
 
-input_n = 28 * 28
-hidden_n = 256
-output_n = 10
+layers = [28 * 28, 256, 10]
 learning_rate = 0.3
-epochs = 10
+epochs = 20
 train_data_set = 'mnist_train.csv'
 test_data_set = 'mnist_test.csv'
 
 
 def main():
-    model = DNN(input_n, hidden_n, output_n, learning_rate)
+    model = DNN(layers, learning_rate)
 
     # train
     with open(train_data_set, 'r', encoding='utf-8') as f:
@@ -21,7 +19,7 @@ def main():
         for record in train_data_list[:2000]:
             all_values = record.split(',')
             inputs = (np.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-            targets = np.zeros(output_n) + 0.01
+            targets = np.zeros(layers[-1]) + 0.01
             targets[int(all_values[0])] = 0.99
             model.train(inputs, targets)
         print(f"epoch {epoch}")
@@ -41,7 +39,7 @@ def main():
             score_card.append(1)
         else:
             score_card.append(0)
-    print(f"accuracy = {sum(score_card) / len(test_data_list)}")
+    print(f"test accuracy = {sum(score_card) / len(test_data_list)}")
 
 
 if __name__ == '__main__':
