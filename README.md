@@ -10,3 +10,4 @@ A Python neural network implemented without deep learning framework that can rec
 
 **Reference:**
 1. 拉希德.  Python神经网络编程.  北京 : 人民邮电出版社, 2018
+2. [Code for the Make Your Own Neural Network book](https://github.com/makeyourownneuralnetwork/makeyourownneuralnetwork)
