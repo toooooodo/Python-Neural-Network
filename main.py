@@ -1,9 +1,9 @@
 from dnn import DNN
 import numpy as np
 
-layers = [28 * 28, 256, 10]
-learning_rate = 0.3
-epochs = 20
+layers = [28 * 28, 200, 10]
+learning_rate = 0.1
+epochs = 5
 train_data_set = 'mnist_train.csv'
 test_data_set = 'mnist_test.csv'
 
@@ -16,7 +16,7 @@ def main():
         train_data_list = f.readlines()
         print(f"train data: {len(train_data_list)}")
     for epoch in range(epochs):
-        for record in train_data_list[:2000]:
+        for record in train_data_list:
             all_values = record.split(',')
             inputs = (np.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
             targets = np.zeros(layers[-1]) + 0.01
