@@ -13,6 +13,7 @@ A Python neural network implemented without deep learning framework that can rec
 2. [Code for the Make Your Own Neural Network book](https://github.com/makeyourownneuralnetwork/makeyourownneuralnetwork)
 ---
 On [mnist_train](http://www.pjreddie.com/media/files/mnist_train.csv) dataset and [mnist_test](http://www.pjreddie.com/media/files/mnist_test.csv) dataset, model performances are as follows:
+
 Epoch|Loss|Test Accuracy
 :--:|:--:|:--:
 0|0.1121|0.9612
